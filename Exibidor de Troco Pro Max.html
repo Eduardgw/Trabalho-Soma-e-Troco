@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exibidor de Troco Pro Max</title>
+    <script>
+        // Cria uma função que calculará o resultado da subtração do campo 1 com o campo 2
+        function calcular() {
+            var num1 = document.getElementById('productPrice').value;
+            var num2 = document.getElementById('amountPaid').value;
+
+            // Converte para Float (números para computadores)
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+
+            // Verifica se a entrada é válida
+            if (!isNaN(num1) && !isNaN(num2)) {
+                var resultado = num2 - num1;
+                if (num1 === 0) {
+                   document.getElementById('resultado').innerHTML = "O produto é free, leve quantos puder!"
+                   end
+                }
+                if (resultado == 0) {
+                    document.getElementById('resultado').innerHTML = "Certinho"
+                    end
+                }
+                if (resultado < 0) {
+                    resultado = Math.abs(resultado); // Remover o sinal negativo
+                    document.getElementById('resultado').innerHTML = "Faltou: R$ " + resultado;
+                    end
+                }
+                document.getElementById('resultado').innerHTML = "Troco: R$ " + resultado;
+            }
+            else {
+                document.getElementById('resultado').innerHTML = 'Não dá para usar "Null" na conta, coloque números reais';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!--A parte visível da página, o front-end-->
+    <h2>Exibidor de Troco Pro Max</h2>
+    <label for="productPrice">Preço do Produto:</label>
+    <input type="number" id="productPrice"><br><br>
+    <!--Não ia fazer um código css só pra alinhar nesse trabalho simples, preguiça-->
+    <label for="amountPaid">Valor Pago:          </label>
+    <input type="number" id="amountPaid"><br><br>
+    <button onclick="calcular()">Calcular</button><br><br>
+    <div id="resultado"></div>
+</body>
+
+</html>
