@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contador de Kilo Definitive Edition</title>
+    <script>
+        // Cria uma função que somará os números no campo 1 e campo 2 quando for chamada
+        function somar() {
+            var num1 = document.getElementById('numero1').value;
+            var num2 = document.getElementById('numero2').value;
+
+            // Converte para Float (números para computadores)
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+
+            // Verifica se a entrada é válida
+            if (!isNaN(num1) && !isNaN(num2)) {
+                var resultado = num1 * num2;
+                document.getElementById('resultado').innerHTML = "Resultado: R$" + resultado;
+            }
+            else {
+                document.getElementById('resultado').innerHTML = 'Não dá para usar "Null" na conta, coloque números reais';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!--A parte visível da página, o front-end-->
+    <h2>Contador de Kilo Definitive Edition</h2>
+    <label for="numero1">Valor do Kilo</label>
+    <input type="number" id="numero1"><br><br>
+    <label for="numero2">Quantidade</label>
+    <input type="number" id="numero2"><br><br>
+    <button onclick="somar()">Calcular</button><br><br>
+    <div id="resultado"></div>
+</body>
+
+</html>

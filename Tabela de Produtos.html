@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tabela de Produtos</title>
+    <script>
+        // Cria uma função que somará os números no campo 1 e campo 2 quando for chamada
+        function somar() {
+            var num1 = document.getElementById('numero1').value;
+
+
+            // Converte para Float (números para computadores)
+            num1 = parseFloat(num1);
+
+
+            // Verifica se a entrada é válida
+            if (!isNaN(num1)){
+                if (num1 === 1) {document.getElementById('resultado').innerHTML = 'Parafuso';}
+                else if (num1 === 2) {document.getElementById('resultado').innerHTML = 'Porca';}
+                else if (num1 === 3) {document.getElementById('resultado').innerHTML = 'Prego';}
+                else {document.getElementById('resultado').innerHTML = 'Diversos'}
+
+                }
+            else {
+                document.getElementById('resultado').innerHTML = 'Não dá para usar "Null" na conta, coloque números reais';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!--A parte visível da página, o front-end-->
+    <h2>Tabela de Produtos</h2>
+    <label for="numero1">Número 1</label>
+    <input type="number" id="numero1"><br><br>
+    <button onclick="somar()">Calcular</button><br><br>
+    <div id="resultado"></div>
+</body>
+
+</html>

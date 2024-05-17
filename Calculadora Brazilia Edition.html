@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Brazilia Edition</title>
+    <script>
+        // Cria uma função que somará os números no campo 1 e campo 2 quando for chamada
+        function somar() {
+            var num1 = document.getElementById('numero1').value;
+
+            // Converte para Float (números para computadores)
+            num1 = parseFloat(num1);
+
+            // Verifica se a entrada é válida
+            if (!isNaN(num1)) {
+                var resultado = num1 * 0.01;
+                document.getElementById('resultado').innerHTML = "Seu dinheiro agora é: " + resultado;
+            }
+            else {
+                document.getElementById('resultado').innerHTML = 'Não dá para usar "Null" na conta, coloque números reais';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!--A parte visível da página, o front-end-->
+    <h2>Calculadora Brazilia Edition</h2>
+    <label for="numero1">Informe o Saldo</label>
+    <input type="number" id="numero1"><br><br>
+    <button onclick="somar()">Calcular</button><br><br>
+    <div id="resultado"></div>
+</body>
+
+</html>
